@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option csharp_namespace = "Echantion";
+
+package Messaging;
+
+service Sender {
+
+	rpc SendAsync (RequestMessage) returns (stream ResponseMessage);
+}
+
+message RequestMessage {
+	string name = 1;
+}
+
+message ResponseMessage {
+	string message = 1;
+}
